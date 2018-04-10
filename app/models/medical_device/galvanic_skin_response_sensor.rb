@@ -6,6 +6,7 @@ module MedicalDevice
     attr_accessor :skip_extract
     after_commit :extract, unless: :skip_extract
     after_commit :channel_push
+    after_update :change_display
     
    	validates :data, inclusion: { in: 0..4095,
    	message: "%{value} is not within the range 0..4095" }
@@ -47,6 +48,11 @@ module MedicalDevice
         end
       end
     end
-  
+    def change_display
+      if self.medical_device.name == #insert device name here in quotes 
+        self.medical_device.four_digit_display.display = self.data.to_s
+        self.medical_device.four_digit_display.save
+      end
+    end
   end
 end
