@@ -1,0 +1,154 @@
+<p id="notice"><%= notice %></p>
+<h1>
+  MedicalDevices
+</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th style="border: 1px solid black;">
+        Id
+      </th>
+      <th style="border: 1px solid black;">
+        Name
+      </th>
+      
+        <th colspan='2' style="border: 1px solid black;">
+          Buzzer
+        </th>
+      
+        <th colspan='2' style="border: 1px solid black;">
+          HeartRateSensor
+        </th>
+      
+        <th colspan='2' style="border: 1px solid black;">
+          GalvanicSkinResponseSensor
+        </th>
+      
+        <th colspan='3' style="border: 1px solid black;">
+          FourDigitDisplay
+        </th>
+      
+      <th style="border: 1px solid black;">
+        &nbsp;
+      </th>
+    </tr>
+    <tr>
+      <th>
+        &nbsp;
+      </th>
+      <th>
+        &nbsp;
+      </th>
+      
+        
+          <th>
+            buzzer
+          </th>
+        
+          <th>
+            port_number
+          </th>
+        
+      
+        
+          <th>
+            data
+          </th>
+        
+          <th>
+            port_number
+          </th>
+        
+      
+        
+          <th>
+            data
+          </th>
+        
+          <th>
+            port_number
+          </th>
+        
+      
+        
+          <th>
+            clock
+          </th>
+        
+          <th>
+            display
+          </th>
+        
+          <th>
+            port_number
+          </th>
+        
+      
+      <th>
+        &nbsp;
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @medical_devices.each do |object| %>
+      <tr id='<%= object.apiotics_instance %>'>
+        <td>
+          <%= object.apiotics_instance %>
+        </td>
+        <td>
+          <%= object.name %>
+        </td>
+        
+          
+            <td class='medical_device-buzzer-buzzer'>
+              <%= object.buzzer.buzzer %>
+            </td>
+          
+            <td class='medical_device-buzzer-port_number'>
+              <%= object.buzzer.port_number %>
+            </td>
+          
+        
+          
+            <td class='medical_device-heart_rate_sensor-data'>
+              <%= object.heart_rate_sensor.data %>
+            </td>
+          
+            <td class='medical_device-heart_rate_sensor-port_number'>
+              <%= object.heart_rate_sensor.port_number %>
+            </td>
+          
+        
+          
+            <td class='medical_device-galvanic_skin_response_sensor-data'>
+              <%= object.galvanic_skin_response_sensor.data %>
+            </td>
+          
+            <td class='medical_device-galvanic_skin_response_sensor-port_number'>
+              <%= object.galvanic_skin_response_sensor.port_number %>
+            </td>
+          
+        
+          
+            <td class='medical_device-four_digit_display-clock'>
+              <%= object.four_digit_display.clock %>
+            </td>
+          
+            <td class='medical_device-four_digit_display-display'>
+              <%= object.four_digit_display.display %>
+            </td>
+          
+            <td class='medical_device-four_digit_display-port_number'>
+              <%= object.four_digit_display.port_number %>
+            </td>
+          
+        
+        <td>
+          <%= link_to "Edit", edit_medical_device_path(object)%>
+          <%= link_to "Show", medical_device_path(object) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

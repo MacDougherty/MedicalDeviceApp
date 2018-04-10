@@ -1,0 +1,144 @@
+<p id="notice"><%= notice %></p>
+<h1>
+  MedicalDevice
+</h1>
+<table>
+  <thead>
+    <tr>
+      <th style="border: 1px solid black;">
+        Id
+      </th>
+      <th style="border: 1px solid black;">
+        Name
+      </th>
+      
+        <th colspan='2' style="border: 1px solid black;">
+          Buzzer
+        </th>
+      
+        <th colspan='2' style="border: 1px solid black;">
+          HeartRateSensor
+        </th>
+      
+        <th colspan='2' style="border: 1px solid black;">
+          GalvanicSkinResponseSensor
+        </th>
+      
+        <th colspan='3' style="border: 1px solid black;">
+          FourDigitDisplay
+        </th>
+      
+    </tr>
+    <tr>
+      <th>
+        &nbsp;
+      </th>
+      <th>
+        &nbsp;
+      </th>
+      
+        
+          <th>
+            buzzer
+          </th>
+        
+          <th>
+            port_number
+          </th>
+        
+      
+        
+          <th>
+            data
+          </th>
+        
+          <th>
+            port_number
+          </th>
+        
+      
+        
+          <th>
+            data
+          </th>
+        
+          <th>
+            port_number
+          </th>
+        
+      
+        
+          <th>
+            clock
+          </th>
+        
+          <th>
+            display
+          </th>
+        
+          <th>
+            port_number
+          </th>
+        
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='<%= @medical_device.apiotics_instance %>'>
+      <td>
+        <%= @medical_device.apiotics_instance %>
+      </td>
+      <td>
+        <%= @medical_device.name %>
+      </td>
+      
+        
+          <td class='medical_device-buzzer-buzzer'>
+            <%= @medical_device.buzzer.buzzer %>
+          </td>
+        
+          <td class='medical_device-buzzer-port_number'>
+            <%= @medical_device.buzzer.port_number %>
+          </td>
+        
+      
+        
+          <td class='medical_device-heart_rate_sensor-data'>
+            <%= @medical_device.heart_rate_sensor.data %>
+          </td>
+        
+          <td class='medical_device-heart_rate_sensor-port_number'>
+            <%= @medical_device.heart_rate_sensor.port_number %>
+          </td>
+        
+      
+        
+          <td class='medical_device-galvanic_skin_response_sensor-data'>
+            <%= @medical_device.galvanic_skin_response_sensor.data %>
+          </td>
+        
+          <td class='medical_device-galvanic_skin_response_sensor-port_number'>
+            <%= @medical_device.galvanic_skin_response_sensor.port_number %>
+          </td>
+        
+      
+        
+          <td class='medical_device-four_digit_display-clock'>
+            <%= @medical_device.four_digit_display.clock %>
+          </td>
+        
+          <td class='medical_device-four_digit_display-display'>
+            <%= @medical_device.four_digit_display.display %>
+          </td>
+        
+          <td class='medical_device-four_digit_display-port_number'>
+            <%= @medical_device.four_digit_display.port_number %>
+          </td>
+        
+      
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_medical_device_path(@medical_device) %> |
+<%= link_to 'Back', medical_devices_path %>

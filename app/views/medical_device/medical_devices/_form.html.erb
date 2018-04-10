@@ -1,0 +1,120 @@
+<%= simple_form_for(@medical_device, url: medical_device_path(@medical_device)) do |form| %>
+  <table>
+    <tr>
+      <th>
+        Id
+      </th>
+      <td>
+        <%= @medical_device.apiotics_instance %>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        Name
+      </th>
+      <td>
+          <%= @medical_device.name %>
+      </td>
+    </tr>
+    
+      <tr>
+        <th>
+          Buzzer
+        </th>
+        <%= form.simple_fields_for :buzzer do |fields| %>
+					 <td>
+          	
+							
+							
+								<%= fields.input :buzzer %>
+							
+          	
+							
+							
+	              	<%= fields.input :port_number, collection: ["J5", "J6", "J7", "J8", "J9", "J10", "J11"] %>
+							
+          	
+					</td>
+        <% end %>
+      </tr>
+    
+      <tr>
+        <th>
+          HeartRateSensor
+        </th>
+        <%= form.simple_fields_for :heart_rate_sensor do |fields| %>
+					 <td>
+          	
+							
+							
+								<%= fields.input :data %>
+							
+          	
+							
+							
+	              	<%= fields.input :port_number, collection: ["J5", "J6", "J7", "J8", "J9", "J10", "J11"] %>
+							
+          	
+					</td>
+        <% end %>
+      </tr>
+    
+      <tr>
+        <th>
+          GalvanicSkinResponseSensor
+        </th>
+        <%= form.simple_fields_for :galvanic_skin_response_sensor do |fields| %>
+					 <td>
+          	
+							
+							
+								<%= fields.input :data %>
+							
+          	
+							
+							
+	              	<%= fields.input :port_number, collection: ["J5", "J6", "J7", "J8", "J9", "J10"] %>
+							
+          	
+					</td>
+        <% end %>
+      </tr>
+    
+      <tr>
+        <th>
+          FourDigitDisplay
+        </th>
+        <%= form.simple_fields_for :four_digit_display do |fields| %>
+					 <td>
+          	
+							
+							
+								<%= fields.input :clock %>
+							
+          	
+							
+							
+								<%= fields.input :display %>
+							
+          	
+							
+							
+	              	<%= fields.input :port_number, collection: ["J5", "J6", "J7", "J8", "J9", "J10"] %>
+							
+          	
+					</td>
+        <% end %>
+      </tr>
+    
+      <tr>
+        <th>
+          &nbsp;
+        </th>
+        <td>
+          <div class="actions">
+            <%= form.submit %>
+          </div>
+        </td>
+      </tr>
+  </table>
+<% end %>
