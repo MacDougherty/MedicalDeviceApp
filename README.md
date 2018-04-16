@@ -1,23 +1,29 @@
 # Medical Device App
 
 ## Overview
-This repository contains code to run a ruby on rails web application for a "medical device," which consists of a buzzer, a Galvanic Skin Response (GSR) sensor, a heart rate sensor, and a 4-digit display connected to a TI C32200sf board via a Grove Base Boosterpack.
 
-The web app allows users to see data from the sensors in their browser.
+This repository contains code to run a Ruby on Rails web application for a "medical" device, which consists of a buzzer, a Galvanic Skin Response (GSR) sensor, a heart rate sensor, and a 4-digit display connected to a TI C32200sf board via a Grove Base Boosterpack.
+
+The web application allows users to see data from the sensors in a browser window.
 
 
-## Pre-Reqs
+## Requirements
 
-In order to use this code, the user will need to have rails installed and bundler installed. For more information on installing rails and bundler see …(add reference ) 
+In order to use this code, you will need to have rails installed and bundler installed. 
 
-To see the live updating web app functionality implemented in the `live_update` branch or the `live_change_display` branch, the user must also have a redis server installed.  If you are on a mac, you can do this by running `brew install redis`.
+To see the live updating web app functionality implemented in the `live_update` branch or the `live_change_display` branch, you will also need to also have a redis server installed.  If you are on a mac, you can do this by running `brew install redis`.
 
 
 ## Set up
 
-The four sensors should be plugged into the designated ports on the Grove Base Boosterpack, and a usb cable should be plugged into the usb port at the top of the board and a usb port on your computer.  
+Connect one end of a USB cable to the port at the top of the TI C32200SF board and the other end to a USB port on your computer.
 
-For more information about setting up the sensors, see <https://portal.apiotics.com/workers/107>.
+Connect the four sensors to the following ports on the Grove Base Boosterpack:* Connect the galvanic skin response sensor to port J6.* Connect the 4-digit display to port J9.
+* Connect the heart rate sensor to port J10.
+* Connect the buzzer to port J11.  
+
+For more information about the sensors and their interfaces, see [the Medical Device page in the Apiotics portal](https://portal.apiotics.com/workers/107).
+
 
 ## Branches
 
@@ -28,13 +34,14 @@ There are four branches in this repository.
 * The `live_update` branch also builds off the master branch but contains additional logic to automatically update the data from the GSR sensor on the web app. 
 * The `live_change_display` branch contains the additional logic from the change_display branch AND the live_update branch, to both update the display AND automatically update the web app with data from the GSR sensor.
 
-Note: The `live_update` branch and `live_change_display` branch both require a redis server to be installed by the user in order to see live updates on the web app.
+Note: For the `live_update` branch and the `live_change_display` branch, you will need to install a redis server in order to see updates on the web app without refreshing the page.
+
 
 ## Implementation
 
 1. Decide which branch in the repository has the functionality you want, and clone it onto your local machine.
 
-2. If you are using Linux, uncomment the following line in your Gemfile:
+2. If you are using Linux, uncomment the following line in the Gemfile:
 `# gem 'mini_racer', platforms: :ruby`.
 
 3. Run `rake db:migrate`.
@@ -54,7 +61,5 @@ If you decide to modify any code in the rails app, you will need to run `dev_com
 
 
 ## More Info
-<https://portal.apiotics.com/workers/107>
-
-
+[Medical Device page in Apiotics portal](https://portal.apiotics.com/workers/107)
 
