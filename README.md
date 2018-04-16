@@ -1,7 +1,7 @@
 # Medical Device App
 
 ## Overview
-This repository contains code to run a ruby on rails web application for a "medical device," which consists of a buzzer, a Galvanic Skin Response (GSR) sensor, a heart rate sensor, and a 4-digit display connected to a TI C32200sf board.
+This repository contains code to run a ruby on rails web application for a "medical device," which consists of a buzzer, a Galvanic Skin Response (GSR) sensor, a heart rate sensor, and a 4-digit display connected to a TI C32200sf board via a Grove Base Boosterpack.
 
 The web app allows users to see data from the sensors in their browser.
 
