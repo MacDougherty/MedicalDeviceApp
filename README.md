@@ -7,7 +7,7 @@ This repository contains code to run a ruby on rails web application for a "medi
 
 In order to use this code, the user will need to have rails installed and bundler installed. For more information on installing rails and bundler see …(add reference ) 
 
-To see the live updating web app functionality implemented in the “live_update” branch or the “live_change_display” branch, the user must also have a redis server installed.  If you are on a mac, you can do this by running 'brew install redis'.
+To see the live updating web app functionality implemented in the 'live_update' branch or the 'live_change_display' branch, the user must also have a redis server installed.  If you are on a mac, you can do this by running 'brew install redis'.
 
 
 ## Set up
@@ -34,7 +34,7 @@ Note: The `live_update branch` and `live_change_display` branch both require a r
 2. If you are using Linux, uncomment the following line in your Gemfile:
 `# gem 'mini_racer', platforms: :ruby`
 
-3. Run 'rake db:migrate`
+3. Run `rake db:migrate`
 
 4. For the `change_display` or `live_change_display` branches, navigate to `app/models/medical_device/galvanic_skin_response_sensor.rb` and insert the name of your device on line 53 where it says `#insert device name here in quotes`.  The name of your device can be found at <https://portal.apiotics.com/workers/107> under the Worker Instances section.
 
