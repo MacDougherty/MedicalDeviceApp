@@ -44,19 +44,25 @@ Note: For the `live_update` branch and the `live_change_display` branch, you wil
 2. If you are using Linux, uncomment the following line in the Gemfile:
 `# gem 'mini_racer', platforms: :ruby`.
 
-3. If you don't already have bundler installed, run `gem install bundler` then run `bundle`.
+3. In `config/initializers/apiotics.rb`, set config.public_key and config.private_key to the public and private keys of your Hive, which can be found on the Apiotics portal near the top of your Hive's page. Copy and paste the corresponding keys instead of "nil" in the following lines:
+```
+  config.public_key = nil #set this to an Environment variable
+  config.private_key = nil #set this to an Environment variable
+```
 
-4. Run `rake db:migrate`.
+4. If you don't already have bundler installed, run `gem install bundler` then run `bundle`.
 
-5. For the `change_display` or `live_change_display` branches, navigate to `app/models/medical_device/galvanic_skin_response_sensor.rb` and insert the name of your device on line 53 where it says `#insert device name here in quotes`.  The name of your device can be found on the [Medical Device page in Apiotics portal](https://portal.apiotics.com/workers/107) under the Worker Instances section.  If you are using the `master` or `live_update` branch, skip this step.
+5. Run `rake db:migrate`.
 
-6. To start communication with the web app, run `rake dev_comms:start`.
+6. For the `change_display` or `live_change_display` branches, navigate to `app/models/medical_device/galvanic_skin_response_sensor.rb` and insert the name of your device on line 53 where it says `#insert device name here in quotes`.  The name of your device can be found on the [Medical Device page in Apiotics portal](https://portal.apiotics.com/workers/107) under the Worker Instances section.  If you are using the `master` or `live_update` branch, skip this step.
 
-7. If you are using the `live_update` or `live_change_display` branch, start a redis server by opening a new terminal and running `redis-server`.  Leave this terminal open in the background.  If you are using the `master` or `change_display` branch, skip this step.
+7. To start communication with the web app, run `rake dev_comms:start`.
 
-8. To start your Rails server, run `rails server` (or `rails s`).
+8. If you are using the `live_update` or `live_change_display` branch, start a redis server by opening a new terminal and running `redis-server`.  Leave this terminal open in the background.  If you are using the `master` or `change_display` branch, skip this step.
 
-9. To see the web app, browse to <http://localhost:3000/medical_devices>.
+9. To start your Rails server, run `rails server` (or `rails s`).
+
+10. To see the web app, browse to <http://localhost:3000/medical_devices>.
 
 Note: 
 If you decide to modify any code in the rails app, you will need to run `dev_comms:restart` (or `dev_comms:stop` then `dev_comms:start`) in order to see the updated functionality on the web app.  
